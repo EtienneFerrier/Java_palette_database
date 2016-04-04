@@ -9,12 +9,14 @@ Two suggestion mechanisms are available, by *semantic relatedness* and by *color
   1. Semantic suggestions use WS4J (Word Net) to find palettes in the database which name is related to a word query.
   2. Colorspace suggestions find palettes in the database which are perceptually close to a palette query.
 
-## Implementation details
-
-Only supports 5-palettes at this time.  
+## Libraries
 All required jars are included in the project.  
-The WS4J jar file is quite large: 40 Mb.  
-Example databases are stored as CSV files in the data folder.
+The WS4J jar file is quite large (40 Mb).  
+
+## Palettes data
+Example databases are stored as CSV files in the `data/` folder.  
+`kuler1.csv`contains ~70 palettes, `kuler2.csv` contains ~650 palettes.  
+For now, the database only handles 5-colors palettes.   
 
 ## Demo
 
