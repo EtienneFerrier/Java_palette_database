@@ -2,22 +2,23 @@
 
 ## Synopsis
 
-This is an implementation in Java of a palette database with suggestion tools.
+This is an implementation in Java of a palette database with suggestion tools.  
 
-The palette database examples are from Adobe Kuler [most popular palettes](https://color.adobe.com/explore/most-popular/?time=all).
-Two suggestion mechanisms are available, by *semantic relatedness* and by *color proximity*.
+The palette database examples are from Adobe Kuler [most popular palettes](https://color.adobe.com/explore/most-popular/?time=all).  
+Two suggestion mechanisms are available, by *semantic relatedness* and by *color proximity*.  
   1. Semantic suggestions use WS4J (Word Net) to find palettes in the database which name is related to a word query.
   2. Colorspace suggestions find palettes in the database which are perceptually close to a palette query.
 
 ## Implementation details
 
-All required jars are included in the project.
-The WS4J jar file is quite large: 40 Mb.
+Only supports 5-palettes at this time.  
+All required jars are included in the project.  
+The WS4J jar file is quite large: 40 Mb.  
 Example databases are stored as CSV files in the data folder.
 
 ## Demo
 
-You can try the database and suggestion system by running Demo.java
+You can try the database and suggestion system by running Demo.java.  
 The typical output should be: 
 
 ```
@@ -40,3 +41,11 @@ Indigo : #1F3642, #6D968D, #B6CCB8, #FFE2B3, #56493F
 Modern Classic : #143840, #5C6B63, #A69E89, #E0C297, #D96523
 Vintage Beach Wear : #473C35, #A36D5C, #9C968B, #D9CEAD, #8A866A
 ```
+
+## TODO:
+1. Replace RGB L2 distance by Lab colorspace or a "mood" colorspace
+2. Add support for 3-palettes and X-palettes
+2. Try on Android
+3. Optimize
+4. Consider precomputing suggestions for palettes in the database for faster loading
+5. Add palettes to the database
