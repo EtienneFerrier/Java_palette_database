@@ -1,5 +1,7 @@
 # Java Palette Database
 
+For the course of computational photography CS-413
+
 ## Synopsis
 
 This is an implementation in Java of a palette database with suggestion tools.  
