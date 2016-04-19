@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Archiver-Version: Plexus Archiver
-Built-By: Etienne
-Class-Path: junit-4.7.jar sqlite-jdbc-3.7.2.jar
-Created-By: Apache Maven 3.3.3
-Build-Jdk: 1.8.0_73
-Main-Class: edu.cmu.lti.ws4j.WS4J
-
