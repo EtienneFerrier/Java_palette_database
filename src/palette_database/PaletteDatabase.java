@@ -37,6 +37,16 @@ public class PaletteDatabase {
 												 new Color(data[3]),
 												 new Color(data[4]),
 												 new Color(data[5]));
+				
+				int nb_descriptors = (data.length - 6) / 2;
+				for(int i = 0; i < nb_descriptors; i++)
+				{
+					Descriptor des = new Descriptor(data[6 + 2*i], data[7 + 2*i]);
+					if (des.concept != null)
+						p.addDescriptor(des);
+					//else System.out.println("null descriptor: " + des.word);
+				}
+				
 				this.addPalette(p);
 			}
 		} catch (FileNotFoundException e) {
@@ -57,8 +67,11 @@ public class PaletteDatabase {
 	public void print() {
 		for(Palette p : palettes) {
 			System.out.println(p);
+			for(Descriptor des : p.descriptors) {
+				//System.out.println("|   " + des.toString());
+				//System.out.println(des.concept);
+			}
 		}
 	}
-
 
 }

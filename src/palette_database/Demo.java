@@ -1,20 +1,31 @@
 package palette_database;
 
+
 public class Demo {
+	
 	
     public static void main(String[] args) {
     	PaletteDatabase pdb = new PaletteDatabase();
-    	pdb.addFromFile("data/kuler2.csv");
+    	pdb.addFromFile("data/kuler3_pos.csv");
     	//pdb.print();
+    	//System.out.println("\n");
     	
-    	String word = "boat";
+    	
+    	String word = "sadness";
     	System.out.println("Suggestions from the palette database -> by semantic relatedness:");
     	System.out.println("For the word: " + word);
     	System.out.println("--------------");
     	SemanticSuggestor ss = new SemanticSuggestor(word, pdb);    	
     	Palette[] semSuggestions = ss.getSuggestions(5);
-    	for(Palette p : semSuggestions) {
-    		System.out.println(p);
+    	if (semSuggestions == null)
+    		System.out.println("Found no suggestions");
+    	else
+    	{
+        	for(Palette p : semSuggestions) {
+        		System.out.println(p);
+        		//System.out.println(p.getTmpScore());
+        	}
+
     	}
     	System.out.println("\n");
     	
