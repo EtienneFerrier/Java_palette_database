@@ -8,17 +8,19 @@ This is an implementation in Java of a palette database with suggestion tools.
 
 The palette database examples are from Adobe Kuler [most popular palettes](https://color.adobe.com/explore/most-popular/?time=all).  
 Two suggestion mechanisms are available, by *semantic relatedness* and by *color proximity*.  
-  1. Semantic suggestions use WS4J (Word Net) to find palettes in the database which name is related to a word query.
+  1. Semantic suggestions use WS4J (Word Net) to find palettes in the database which name is related to a word query.  
   2. Colorspace suggestions find palettes in the database which are perceptually close to a palette query.
 
 ## Libraries
 All required jars are included in the project.  
-The WS4J jar file is quite large (40 Mb).  
+The [Jawjaw](https://code.google.com/archive/p/jawjaw/) library contains the wordnet database.  
+The [WS4J](https://code.google.com/archive/p/ws4j/) library contains the word similarity interface.
 
 ## Palettes data
 Example databases are stored as CSV files in the `data/` folder.  
-`kuler1.csv`contains ~70 palettes, `kuler2.csv` contains ~650 palettes.  
-For now, the database only handles 5-colors palettes.   
+`kuler1_pos.csv`contains ~70 palettes, `kuler3_pos.csv` contains ~1000 palettes.  
+For now, the database only handles 5-colors palettes.  
+For each palette, the CSV files also contain POS tags for the name of the palette.
 
 ## Demo
 
@@ -27,23 +29,23 @@ The typical output should be:
 
 ```
 Suggestions from the palette database -> by semantic relatedness:
-For the word: boat
+For the word: sadness
 --------------
-Kayak : #36362C, #5D917D, #A8AD80, #E6D4A7, #825534
-Bike Riders : #E82B1E, #E5DEAF, #A0B688, #557A66, #453625
-Green Thumb : #075807, #097609, #70AF1A, #B9D40B, #E5EB0B
-Ship Wreck : #372A26, #4D4D4D, #6DA0A7, #9ED5A8, #C7F5FF
-Beetle Bus Goes Jamba Juice : #730046, #BFBB11, #FFC200, #E88801, #C93C00
+clouds of sadness : #212226, #45433F, #687067, #BDBB99, #F0EAC3
+spring happiness : #AF7575, #EFD8A1, #BCD693, #AFD7DB, #3D9CA8
+feeling etsy : #DCEBDD, #A0D5D6, #789AA1, #304345, #AD9A27
+satellite of love : #FDFF98, #A7DB9E, #211426, #6B073B, #DA8C25
+hope springs eternal : #4B5657, #969481, #D2C9B0, #F4E3C1, #B6B835
 
 
 Suggestions from the palette database -> by RGB L2 distance:
-For palette: Kayak : #36362C, #5D917D, #A8AD80, #E6D4A7, #825534
+For palette: clouds of sadness : #212226, #45433F, #687067, #BDBB99, #F0EAC3
 --------------
-Kayak : #36362C, #5D917D, #A8AD80, #E6D4A7, #825534
-Indigo : #1F3642, #6D968D, #B6CCB8, #FFE2B3, #56493F
-28x Dusty Petrol : #292929, #5B7876, #8F9E8B, #F2E6B6, #412A22
-Modern Classic : #143840, #5C6B63, #A69E89, #E0C297, #D96523
-Vintage Beach Wear : #473C35, #A36D5C, #9C968B, #D9CEAD, #8A866A
+clouds of sadness : #212226, #45433F, #687067, #BDBB99, #F0EAC3
+watercolor moon : #261F26, #3F3B40, #6C7367, #BFBF8A, #F2E086
+dreams forever : #211426, #413659, #656F8C, #9BBFAB, #F2EFDF
+boompjes : #141F26, #2B4040, #405950, #A69E86, #F2D9BB
+celtic : #47191C, #59574B, #829690, #B5B09A, #E1E3CB
 ```
 
 ## TODO:
