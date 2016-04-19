@@ -2,21 +2,14 @@ package palette_database;
 
 import java.util.Collections;
 
-import edu.cmu.lti.lexical_db.ILexicalDatabase;
-import edu.cmu.lti.lexical_db.NictWordNet;
 import edu.cmu.lti.lexical_db.data.Concept;
 import edu.cmu.lti.ws4j.RelatednessCalculator;
-import edu.cmu.lti.ws4j.impl.Lesk;
-import edu.cmu.lti.ws4j.impl.Path;
 import edu.cmu.lti.ws4j.impl.Resnik;
 
 
 public class SemanticSuggestor {
 
-    public static ILexicalDatabase db = new NictWordNet();
-    public static RelatednessCalculator rc = new Resnik(db);
-    //public static RelatednessCalculator rc = new Path(db);
-    //public static RelatednessCalculator rc = new Lesk(db);
+    public static RelatednessCalculator rc = new Resnik(DatabaseConfig.db);
 	private static final String[] POS_TAGS = {"n", "a", "v", "r"};
 
 	private PaletteDatabase pdb;
@@ -33,7 +26,7 @@ public class SemanticSuggestor {
     private void set_concepts() {
     	for(int i = 0; i < POS_TAGS.length; i++)
     	{
-    		refConcepts[i] = db.getMostFrequentConcept(refWord, POS_TAGS[i]);
+    		refConcepts[i] = DatabaseConfig.db.getMostFrequentConcept(refWord, POS_TAGS[i]);
     	}
     }
         

@@ -67,10 +67,10 @@ public class PaletteDatabase {
 	public void print() {
 		for(Palette p : palettes) {
 			System.out.println(p);
-			for(Descriptor des : p.descriptors) {
+			//for(Descriptor des : p.descriptors) {
 				//System.out.println("|   " + des.toString());
 				//System.out.println(des.concept);
-			}
+			//}
 		}
 	}
 

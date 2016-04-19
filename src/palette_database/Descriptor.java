@@ -16,37 +16,37 @@ public class Descriptor {
 	
     private Concept getConcept() {
     	String spos = POS_to_string(pos);
-    	Concept c = SemanticSuggestor.db.getMostFrequentConcept(word, spos);
+    	Concept c = DatabaseConfig.db.getMostFrequentConcept(word, spos);
     	
     	// dogs -> dog
     	if(c == null && spos.equals("n") && word.substring(word.length()-1).equals("s")) {
     		word = word.substring(0, word.length()-1);
-    		c = SemanticSuggestor.db.getMostFrequentConcept(word, "n");
+    		c = DatabaseConfig.db.getMostFrequentConcept(word, "n");
     	}
     	// sandy (first name) -> sandy (adj)
     	if(c == null && spos.equals("n")) {
     		pos = POS.a;
-    		c = SemanticSuggestor.db.getMostFrequentConcept(word, "a");
+    		c = DatabaseConfig.db.getMostFrequentConcept(word, "a");
     	}
     	// olive
     	if(c == null && spos.equals("a")) {
     		pos = POS.n;
-    		c = SemanticSuggestor.db.getMostFrequentConcept(word, "n");
+    		c = DatabaseConfig.db.getMostFrequentConcept(word, "n");
     	}
     	// evening
     	if(c == null && spos.equals("v") && word.length() >= 3 && word.substring(word.length()-3).equals("ing")) {
     		pos = POS.n;
-    		c = SemanticSuggestor.db.getMostFrequentConcept(word, "n");
+    		c = DatabaseConfig.db.getMostFrequentConcept(word, "n");
     	}
     	// amazing 
     	if(c == null && spos.equals("v") && word.length() >= 3 && word.substring(word.length()-3).equals("ing")) {
     		pos = POS.a;
-    		c = SemanticSuggestor.db.getMostFrequentConcept(word, "a");
+    		c = DatabaseConfig.db.getMostFrequentConcept(word, "a");
     	}
     	// wine
     	if(c == null && spos.equals("v")) {
     		pos = POS.n;
-    		c = SemanticSuggestor.db.getMostFrequentConcept(word, "n");
+    		c = DatabaseConfig.db.getMostFrequentConcept(word, "n");
     	}
 
     	return c;

@@ -11,7 +11,7 @@ public class Demo {
     	//System.out.println("\n");
     	
     	
-    	String word = "sadness";
+    	String word = "boat";
     	System.out.println("Suggestions from the palette database -> by semantic relatedness:");
     	System.out.println("For the word: " + word);
     	System.out.println("--------------");
