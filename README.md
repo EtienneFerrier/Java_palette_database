@@ -48,10 +48,3 @@ boompjes : #141F26, #2B4040, #405950, #A69E86, #F2D9BB
 celtic : #47191C, #59574B, #829690, #B5B09A, #E1E3CB
 ```
 
-## TODO:
-1. Replace RGB L2 distance by Lab colorspace or a "mood" colorspace
-2. Add support for 3-palettes and X-palettes
-2. ~~Try on Android~~
-3. Optimize
-4. Consider precomputing suggestions for palettes in the database for faster loading
-5. ~~Add palettes to the database~~
